@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\Sign_UpController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/Sign_Up', [Sign_UpController::class, 'index'])->name('Sign_Up');
+
 Route::get('/Recipes', function () {
     return view('Recipe.index');
 });
 
+Route::get('/Login', [LoginController::class, 'index'])->name('Login');
 
