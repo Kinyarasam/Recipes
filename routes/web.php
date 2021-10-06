@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/Recipes', function () {
     return view('Recipe.index');
 });
+
+
