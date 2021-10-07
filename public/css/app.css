@@ -576,6 +576,10 @@ video {
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
 }
 
+body {
+  font-family: 'Nunito'
+}
+
 .container{
   width: 100%;
 }
@@ -32510,13 +32514,6 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 
-@layer base {
-    body {
-        font-family: 'Nunito'
-    }
-} */
-
 .card {
   position: relative;
   overflow: hidden;
@@ -32533,13 +32530,15 @@ video {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   border-radius: 9999px;
-  background-color: E2E2D5;
+  --tw-bg-opacity: 1;
+  background-color: rgba(254, 243, 199, var(--tw-bg-opacity));
   padding: 0.5rem;
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: 888883;
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
 }
 
 .btn {

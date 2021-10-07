@@ -29,7 +29,7 @@
                     </li> 
                     
                     <li class="py-1">
-                        <a href="" class="flex justify-end px-4 border-r-8 border-white">
+                        <a href="{{ route('dashboard') }}" class="flex justify-end px-4 border-r-8 border-white">
                             <span>Dashboard</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
                         </a>
@@ -54,8 +54,20 @@
 
         <main class="px-16 py-6 bg-gray-200 md:col-span-4">
             <div class="flex justify-center md:justify-end">
-                <a href="{{ route('Login') }}" class='transition duration-500 ease-out md:border-2 border-primary btn text-primary hover:bg-primary hover:text-white hover:shadow-2xl'>Log in</a>
-                <a href="{{ route('Sign_Up') }}" class='ml-2 transition duration-500 ease-out md:border-2 border-primary btn text-primary hover:bg-primary hover:text-white hover:shadow-2xl'>Sign up</a>
+                @auth
+                    <a class='transition duration-500 ease-out md:border-2 border-primary btn text-primary hover:bg-primary hover:text-white hover:shadow-2xl'>{{ auth()->user()->username }}</a>
+                   
+                    <a href="" class='ml-2 transition duration-500 ease-out md:border-2 border-primary btn text-primary hover:bg-primary hover:text-white hover:shadow-2xl'>Logout</a>
+                    
+                @endauth
+
+                @guest
+                    <a href="{{ route('Login') }}" class='transition duration-500 ease-out md:border-2 border-primary btn text-primary hover:bg-primary hover:text-white hover:shadow-2xl'>Log in</a>
+                    <a href="{{ route('Sign_Up') }}" class='ml-2 transition duration-500 ease-out md:border-2 border-primary btn text-primary hover:bg-primary hover:text-white hover:shadow-2xl'>Sign up</a>        
+                    
+                    
+                @endguest
+                              
             </div>
             <div class="flex items-center justify-center mt-2">
                 <div class="w-6 h-4 bg-red-500"></div>
@@ -74,7 +86,7 @@
                 <div class="grid gap-10 mt-8 lg:grid-cols-3">
                     <!-- cards go here -->
                         <div class="card hover:shadow-2xl">
-                            <img src="./img/img-4.jpg"  alt="burger" class="object-cover w-full h-72 sm:h-72">
+                            <img src="{{ asset('images/img-4.jpg') }}"  alt="burger" class="object-cover w-full h-72 sm:h-72">
                             <div class="m-4">
                                 <span class="font-bold">Burger</span>
                                 <span class="block text-sm text-gray-500">Recipe by Kinyarasam</span>
@@ -86,7 +98,7 @@
                         </div>
                         
                         <div class="card hover:shadow-2xl">
-                            <img src="./img/img-2.jpg"  alt="ice cream" class="object-cover w-full h-72 sm:h-72">
+                            <img src="{{ asset('images/img-2.jpg') }}"  alt="ice cream" class="object-cover w-full h-72 sm:h-72">
                             <div class="m-4">
                                 <span class="font-bold">Ice Cream</span>
                                 <span class="block text-sm text-gray-500">Recipe by Kinyarasam</span>
@@ -99,7 +111,7 @@
                        
                         <div class="card hover:shadow-2xl">
                         
-                            <img src="./img/img-3.jpg"  alt="ice cream" class="object-cover w-full h-72 sm:h-72">
+                            <img src="{{ asset('images/img-3.jpg') }}"  alt="ice cream" class="object-cover w-full h-72 sm:h-72">
                             <div class="m-4">
                                 <span class="font-bold">Ice Cream</span>
                                 <span class="block text-sm text-gray-500">Recipe by Kinyarasam</span>
